@@ -1,5 +1,6 @@
 import React from "react";
+import styles from "./styles.module.css";
 
 export default function Sections({ children }) {
-  return <div>{children}</div>;
+  return <div className={styles.Container}>{children}</div>;
 }
