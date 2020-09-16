@@ -5,6 +5,7 @@ import SearchbarRender from "./components/Searchbar";
 import GalleryRender from "./components/ImageGallery";
 import ButtonRender from "./components/Button";
 import Loader from "./components/Loader";
+import Notification from "./components/Notification";
 //utils
 import SearchImageFromPixabay from "./components/servises/PixabayApi";
 import Modal from "./components/Modal";
@@ -65,10 +66,15 @@ class App extends Component {
   };
 
   render() {
-    const { images, isLoading, largeImageUrl } = this.state;
+    const { images, isLoading, largeImageUrl, error } = this.state;
     return (
       <Sections>
         <SearchbarRender onSubmit={this.onSubmit} />
+        {error && (
+          <Notification
+            message={`Whoops, something went wrong: ${error.message}`}
+          />
+        )}
         {largeImageUrl !== null && (
           <Modal
             largeImage={largeImageUrl}
