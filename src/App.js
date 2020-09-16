@@ -30,6 +30,9 @@ class App extends Component {
     if (prevQuery !== nextQuery) {
       this.fetchImages();
     }
+    if (this.state.page > 2 && prevState.page !== this.state.page) {
+      this.scrollToBottom();
+    }
   };
 
   fetchImages = () => {
@@ -52,6 +55,13 @@ class App extends Component {
 
   closeModal = () => {
     this.setState({ largeImageUrl: null });
+  };
+
+  scrollToBottom = () => {
+    window.scrollTo({
+      top: document.documentElement.scrollHeight,
+      behavior: "smooth",
+    });
   };
 
   render() {
