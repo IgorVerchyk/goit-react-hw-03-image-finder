@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import styles from "./styles.module.css";
 import PropTypes from "prop-types";
 
-class SearchbarRender extends Component {
+class Searchbar extends Component {
   state = {
     searchQuery: "",
   };
@@ -50,9 +50,9 @@ class SearchbarRender extends Component {
   }
 }
 
-export default SearchbarRender;
+export default Searchbar;
 
-SearchbarRender.propTypes = {
+Searchbar.propTypes = {
   onSubmit: PropTypes.func.isRequired,
   query: PropTypes.string,
 };

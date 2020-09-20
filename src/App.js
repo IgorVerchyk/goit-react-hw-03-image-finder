@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 //components
 import Sections from "./components/Sections";
-import SearchbarRender from "./components/Searchbar";
+import Searchbar from "./components/Searchbar";
 import GalleryRender from "./components/ImageGallery";
 import ButtonRender from "./components/Button";
 import Loader from "./components/Loader";
@@ -69,7 +69,7 @@ class App extends Component {
     const { images, isLoading, largeImageUrl, error } = this.state;
     return (
       <Sections>
-        <SearchbarRender onSubmit={this.onSubmit} />
+        <Searchbar onSubmit={this.onSubmit} />
         {error && (
           <Notification
             message={`Whoops, something went wrong: ${error.message}`}
